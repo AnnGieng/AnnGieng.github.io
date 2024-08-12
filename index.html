@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ann Wairimu Portfolio</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>ANN</h2>
+        <nav>
+            <ul>
+                <li><a href="/index.html" class="/">Home</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/portfolio.html">Portfolio</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <footer>
+            <p>&copy; 2024 Ann.</p>
+        </footer>
+    </div>
+    <div class="main-content">
+        <video autoplay muted loop id="background-video">
+            <source src="background.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="header">
+            <h1 id="name">Ann Wairimu</h1>
+        </div>
+        <div class="container">
+            <img src="profile.png.jpeg" alt="Profile Picture" class="profile-pic">
+            <div class="intro">
+                <p> My name is Ann Wairimu, and I am a web developer proficient in HTML, JavaScript, and CSS. Committed to staying at the forefront of industry trends, I thrive on adapting swiftly to new technologies and turning ideas into reality. Beyond coding, I bring valuable experience in agile methodologies, project management, and fostering positive team dynamics. I am looking forward to obtaining a BBIT degree. <span>Below are my social media handles</span></p>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/share/pmqHJmV2YeVxDEhr/?mibextid=qi2Omg"><img src="facebook-icon.png.png" alt="Facebook"></a>
+                <a href="https://www.tiktok.com/@anitagieng?_t=8oeMJGS0bSf&_r=1"><img src="tiktok-icon.png" alt="Tiktok"></a>
+                <a href="https://github.com/AnnGieng"><img src="github-icon.png" alt="GitHub"></a>
+                <a href="https://www.instagram.com/giengann?igsh=MWVudno4eDUzcDFmeA=="><img src="instagram-icon.png" alt="Instagram"></a>
+                <a href="https://www.youtube.com/@anngieng1069"><img src="youtube-icon.png" alt="youtube"></a>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script>
+        // Animate name continuously
+        const textWrapper = document.querySelector('#name');
+        textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+        anime.timeline({loop: true})
+            .add({
+                targets: '#name .letter',
+                translateY: [100,0],
+                translateZ: 0,
+                opacity: [0,1],
+                easing: "easeOutExpo",
+                duration: 1400,
+                delay: (el, i) => 300 + 30 * i
+            }).add({
+                targets: '#name .letter',
+                translateY: [0,-100],
+                opacity: [1,0],
+                easing: "easeInExpo",
+                duration: 1200,
+                delay: (el, i) => 100 + 30 * i
+            });
+    </script>
+</body>
+</html>
